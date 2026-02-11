@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply overflow-x-hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply overflow-x-hidden;
+    max-width: 100vw;
+  }
+
+  /* Prevent modal scroll issues */
+  body.modal-open {
+    @apply overflow-hidden;
+  }
+}
+
+@layer utilities {
+  /* Mobile-safe containers */
+  .container-safe {
+    @apply max-w-full px-4;
+  }
+
+  /* Prevent horizontal overflow */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
